@@ -1,0 +1,199 @@
+doctype 5
+html
+  head
+    link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps', rel='stylesheet')
+    link(rel='stylesheet', type='text/css', href="css/ui-lightness/jquery-ui-1.9.2.custom.min.css")
+    link(rel='stylesheet', type='text/css', href="css/styles.css")
+    link(rel='stylesheet', type='text/css', href="css/rainbow.theme.css")
+    meta(content='width=device-width, minimum-scale=0.5, maximum-scale=0.5', name='viewport')
+    script(type='text/javascript', src='js/vendor/require.js', data-main='js/modules/app')
+    meta(charset='utf-8')
+    title HTML5 Template Project
+  body
+    #header
+      a(href='#slide-responsive')
+        i &#xF12C; 
+        span Responsiivinen suunnittelu
+      a(href='#slide-mediaquery')
+        i &#xF062; 
+        span CSS Media query
+      a(href='#slide-practices')
+        i &#xF139; 
+        span Hyviä käytäntöjä
+    #main
+      section#slide-intro
+        h1
+          img(src='img/contract.png', alt='')
+          | Responsiivinen 
+          span suunnittelu
+      section#slide-responsive
+        .wrap
+          h1 Mitä on responsiivinen suunnittelu?
+          p.description
+            | Responsiivinen suunnittelu on suunnittelua, joka tavoite on mahdollistaa
+            | nettisivun tai applikaation käyttö niin kaikille laitteille kuin kaikille näyttökoille.  
+            br
+            | Vaikka pöytätietokoneiden ja kannettavien tietokoneiden näytön resoluutiot ovatkin kasvaneet
+            | huomattavasti, on samaan aikaan mobiililaitteiden käyttö internetin selaamiseen yleistynyt.
+          .column
+            img(src='img/mobile.png', alt='')
+          .column
+            h3 Juuh elikkäs
+            p
+              |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
+              |Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              |Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo. 
+              
+            p
+              |Vestibulum ultricies sodales mauris, convallis interdum diam suscipit nec. Sed congue nunc a dolor tristique sed cursus mi tempor. 
+              |Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              |Nullam vel metus neque, eget congue ante. Nulla tortor mauris, auctor vitae consequat feugiat, euismod quis quam. 
+              |Suspendisse non lorem lorem. Duis non nisl quam, eget ultrices tortor. Donec sagittis ligula a risus mattis hendrerit. 
+              |Curabitur dolor dui, auctor sit amet volutpat eget, tempus vehicula lectus. 
+      section#slide-mediaquery
+        .wrap
+          h1 
+            i &#xF062;
+            |  CSS Media query
+          p.description
+            | CSS Media queryjen avulla voidaan asettaa ulkoasulle useita halkeamispisteitä ns. "breakpointteja", joihin
+            | voidaan asettaa määrityksiä tietynlaiselle näyttötyypille tai -koolle.
+            br
+            | Breakpointit määritellään muiden tyylimääritysten sekaan hieman erikoisfonttien määrittelyä vastaavalla syntaksilla
+          
+          pre
+            code(data-language='css')
+              | @media all and (max-width: 960px) {
+              |   /* 
+              |     Määritetään .column - luokan omaavat elementit puoleen näytön koosta
+              |     kun näytön koko on maksimissaan 960 pikseliä leveä
+              |   */
+              |   .column {
+              |     width: 480px;
+              |   }
+              | } 
+          p
+            | Queryjen määrittelyssä asetetaan ensin minkälaiselle laitteelle (medialle) asetus on tarkoitettu.
+            | Tässä tapauksessa määritys koskee kaikkia laitteita (all).
+            | Muita usein käytettyjä määrityksiä:
+          ul
+            li handheld - Puhelimet, tabletit
+            li screen - Pöytätietokoneet ja kannettavat tietokoneet
+            li tv - Televisiot
+          p
+            | Kaikki määrityksen ehdot yhdistetään loogisilla operaattoreilla 
+            strong and
+            |,
+            strong  pilkku (, joka vastaa käytännössä OR operaattoria) 
+            |,
+            strong  not
+            |,
+            strong  only
+            br
+            br
+            | Yleisimpiä näytön ominaisuuksien ehtoja:
+          
+          ul
+            li max-width - Ikkunan maksimileveys
+            li max-height - Ikkunan maksimikorkeus
+            li min-width - Ikkunan minimileveys
+            li min-height - Ikkunan minimikorkeus
+            li orientation - Laitteen orientaatio (landscape|portrait)
+            li aspect-ratio - Ikkunan kuvasuhde
+          pre
+            code(data-language='css')
+              | @media screen and (max-width: 995px) , screen and (max-height: 700px) {
+              |   /* Esimerkki määrityksien ketjuttamisesta */
+              |   #cat {
+              |     display: none;
+              |   }
+              | }
+          p
+            | Lisää tietoa media queryistä löytyy 
+            a(href='http://www.w3.org/TR/css3-mediaqueries/', target='_blank') ominaisuuden virallisesta määrittelystä
+            |  tai 
+            a(href='https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries', target='_blank') Mozillan kehittäjäsivulta
+          .warning
+            i &#xF049;
+            | Internet Explorer tukee media queryjä vasta versiosta 9 eteenpäin
+      section#slide-practices
+        .wrap
+          h1 Hyväksi todettuna käytäntöjä
+          .column
+            .screen
+              .screen-inner
+                #display
+                  .header Hello
+                  .column
+                    img(src='img/kissa.png', alt='')
+                    p
+                      |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
+                      |Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      |Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.   
+                  .column
+                    p
+                      |Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      |Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
+                      |Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.                       
+                      |Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      |Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo. 
+                      |Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      |Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
+                      |Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.                       
+                      |Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      |Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.                       
+          .column
+            ul
+              li 
+                i &#xF0AD;
+                | Sivun responsiivisuus kannattaa pitää alusta lähtien mielessä.
+              li 
+                i &#xF0AD;
+                | Elementtien koon määrittämiseen kannattaa usein käyttää prosentteja, 
+                | mutta on hyvä pitää niitä ympäröivän elementin koko esimerkiksi pikseleillä määriteltynä.
+                br
+                | Ympäröivää elementtiä voi siten myöhemmin hallita helposti esimerkiksi media queryillä.
+              li
+                i &#xF0AD;
+                | Linkkien ja painikkeiden kannattaa olla varsinkin mobiili- ja tablettikoossa tarpeeksi
+                | suuria jotta niihin osuu sormella.
+              li
+                button.btn Näin isoja
+        .wrap
+          h3 Yksinkertainen responsiivinen ulkoasu
+          h4 HTML
+          pre
+            code(data-language='html')
+              | <div class="header">
+              |   Hello
+              | </div>
+              | <div class="column">
+              |   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              | </div>
+              | <div class="column">
+              |   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              | </div>
+          h4 CSS
+          pre
+            code(data-language='css')
+              | .header {
+              |   height: 30px;
+              |   background: #ccc;
+              |   line-height: 30px;
+              |   padding: 0 10px;
+              | }
+              | .column {
+              |   width: 50%;
+              |   float: left;
+              | }
+              | @media all and (max-width: 640px) {
+              |   .column {
+              |     width: 100%;
+              |     float: none;
+              |   }
+              | }
+
+    script(type='text/javascript')
+      require(['app'], function(app){ app.main() })
+
+
