@@ -28,11 +28,12 @@ html
           span suunnittelu
       section#slide-responsive
         .wrap
-          h1 Mitä on responsiivinen suunnittelu?
+          h1 
+            i &#xF12C; 
+            | Mitä on responsiivinen suunnittelu?
           p.description
             | Responsiivinen suunnittelu on suunnittelua, joka tavoite on mahdollistaa
             | nettisivun tai applikaation käyttö niin kaikille laitteille kuin kaikille näyttökoille.  
-            br
             | Vaikka pöytätietokoneiden ja kannettavien tietokoneiden näytön resoluutiot ovatkin kasvaneet
             | huomattavasti, on samaan aikaan mobiililaitteiden käyttö internetin selaamiseen yleistynyt.
           .column
@@ -118,7 +119,9 @@ html
             | Internet Explorer tukee media queryjä vasta versiosta 9 eteenpäin
       section#slide-practices
         .wrap
-          h1 Hyväksi todettuna käytäntöjä
+          h1 
+            i &#xF139; 
+            | Hyväksi todettuna käytäntöjä
           .column
             .screen
               .screen-inner
@@ -147,18 +150,18 @@ html
               li 
                 i &#xF0AD;
                 | Sivun responsiivisuus kannattaa pitää alusta lähtien mielessä.
-              li 
-                i &#xF0AD;
-                | Elementtien koon määrittämiseen kannattaa usein käyttää prosentteja, 
-                | mutta on hyvä pitää niitä ympäröivän elementin koko esimerkiksi pikseleillä määriteltynä.
-                br
-                | Ympäröivää elementtiä voi siten myöhemmin hallita helposti esimerkiksi media queryillä.
               li
                 i &#xF0AD;
                 | Linkkien ja painikkeiden kannattaa olla varsinkin mobiili- ja tablettikoossa tarpeeksi
                 | suuria jotta niihin osuu sormella.
               li
                 button.btn Näin isoja
+              li 
+                i &#xF0AD;
+                | Elementtien koon määrittämiseen kannattaa usein käyttää prosentteja, 
+                | mutta on hyvä pitää niitä ympäröivän elementin koko esimerkiksi pikseleillä määriteltynä.
+                br
+                | Ympäröivää elementtiä voi siten myöhemmin hallita helposti esimerkiksi media queryillä.
         .wrap
           h3 Yksinkertainen responsiivinen ulkoasu
           h4 HTML
@@ -168,6 +171,7 @@ html
               |   Hello
               | </div>
               | <div class="column">
+              |   <img src="img/kissa.png" alt="" />
               |   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               | </div>
               | <div class="column">
@@ -185,6 +189,11 @@ html
               | .column {
               |   width: 50%;
               |   float: left;
+              | }
+              | .column img {
+              |   display: block;
+              |   margin: auto;
+              |   max-width: 100%;
               | }
               | @media all and (max-width: 640px) {
               |   .column {

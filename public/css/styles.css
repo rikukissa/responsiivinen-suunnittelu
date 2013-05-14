@@ -112,6 +112,7 @@ h4 {
 }
 .screen {
   width: 100%;
+  max-width: 470px;
   height: 300px;
   padding: 15px;
   -webkit-border-radius: 20px;
@@ -172,6 +173,7 @@ h4 {
 .screen.screen-tablet #display .column {
   width: 100%;
   float: none;
+  height: auto;
 }
 .screen.screen-mobile {
   padding: 5px;
@@ -279,9 +281,8 @@ h4 {
 #slide-responsive h1,
 #slide-responsive h3 {
   text-shadow: -1px -1px 0 rgba(0,0,0,0.2);
-  text-align: center;
 }
-#slide-responsive p {
+#slide-responsive h3 {
   text-align: center;
 }
 #slide-responsive img {
@@ -289,6 +290,9 @@ h4 {
 }
 #slide-responsive .column:last-child {
   padding-top: 40px;
+}
+#slide-responsive .column:last-child p {
+  text-align: center;
 }
 #slide-mediaquery {
   position: relative;

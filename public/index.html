@@ -1,180 +1,70 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps">
-    <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.9.2.custom.min.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/rainbow.theme.css">
-    <meta content="width=device-width, minimum-scale=0.5, maximum-scale=0.5" name="viewport">
-    <script type="text/javascript" src="js/vendor/require.js" data-main="js/modules/app"></script>
-    <meta charset="utf-8">
-    <title>HTML5 Template Project</title>
-  </head>
-  <body>
-    <div id="header"><a href="#slide-responsive"><i>&#xF12C; </i><span>Responsiivinen suunnittelu</span></a><a href="#slide-mediaquery"><i>&#xF062; </i><span>CSS Media query</span></a><a href="#slide-practices"><i>&#xF139; </i><span>Hyviä käytäntöjä</span></a></div>
-    <div id="main">
-      <section id="slide-intro">
-        <h1><img src="img/contract.png" alt="">Responsiivinen <span>suunnittelu</span></h1>
-      </section>
-      <section id="slide-responsive">
-        <div class="wrap">
-          <h1>Mitä on responsiivinen suunnittelu?</h1>
-          <p class="description">
-            Responsiivinen suunnittelu on suunnittelua, joka tavoite on mahdollistaa
-            nettisivun tai applikaation käyttö niin kaikille laitteille kuin kaikille näyttökoille.  <br>Vaikka pöytätietokoneiden ja kannettavien tietokoneiden näytön resoluutiot ovatkin kasvaneet
-            huomattavasti, on samaan aikaan mobiililaitteiden käyttö internetin selaamiseen yleistynyt.
-          </p>
-          <div class="column"><img src="img/mobile.png" alt=""></div>
-          <div class="column">
-            <h3>Juuh elikkäs</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo. 
-            </p>
-            <p>
-              Vestibulum ultricies sodales mauris, convallis interdum diam suscipit nec. Sed congue nunc a dolor tristique sed cursus mi tempor. 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Nullam vel metus neque, eget congue ante. Nulla tortor mauris, auctor vitae consequat feugiat, euismod quis quam. 
-              Suspendisse non lorem lorem. Duis non nisl quam, eget ultrices tortor. Donec sagittis ligula a risus mattis hendrerit. 
-              Curabitur dolor dui, auctor sit amet volutpat eget, tempus vehicula lectus. 
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="slide-mediaquery">
-        <div class="wrap">
-          <h1> <i>&#xF062;</i> CSS Media query</h1>
-          <p class="description">
-            CSS Media queryjen avulla voidaan asettaa ulkoasulle useita halkeamispisteitä ns. "breakpointteja", joihin
-            voidaan asettaa määrityksiä tietynlaiselle näyttötyypille tai -koolle.<br>Breakpointit määritellään muiden tyylimääritysten sekaan hieman erikoisfonttien määrittelyä vastaavalla syntaksilla
-          </p>
-          <pre><code data-language="css">
-              @media all and (max-width: 960px) {
-                /* 
-                  Määritetään .column - luokan omaavat elementit puoleen näytön koosta
-                  kun näytön koko on maksimissaan 960 pikseliä leveä
-                */
-                .column {
-                  width: 480px;
-                }
-              } </code></pre>
-          <p>
-            Queryjen määrittelyssä asetetaan ensin minkälaiselle laitteelle (medialle) asetus on tarkoitettu.
-            Tässä tapauksessa määritys koskee kaikkia laitteita (all).
-            Muita usein käytettyjä määrityksiä:
-          </p>
-          <ul>
-            <li>handheld - Puhelimet, tabletit</li>
-            <li>screen - Pöytätietokoneet ja kannettavat tietokoneet</li>
-            <li>tv - Televisiot</li>
-          </ul>
-          <p>Kaikki määrityksen ehdot yhdistetään loogisilla operaattoreilla <strong>and</strong>,<strong> pilkku (, joka vastaa käytännössä OR operaattoria) </strong>,<strong> not</strong>,<strong> only</strong><br><br>Yleisimpiä näytön ominaisuuksien ehtoja:</p>
-          <ul>
-            <li>max-width - Ikkunan maksimileveys</li>
-            <li>max-height - Ikkunan maksimikorkeus</li>
-            <li>min-width - Ikkunan minimileveys</li>
-            <li>min-height - Ikkunan minimikorkeus</li>
-            <li>orientation - Laitteen orientaatio (landscape|portrait)</li>
-            <li>aspect-ratio - Ikkunan kuvasuhde</li>
-          </ul>
-          <pre><code data-language="css">
-              @media screen and (max-width: 995px) , screen and (max-height: 700px) {
-                /* Esimerkki määrityksien ketjuttamisesta */
-                #cat {
-                  display: none;
-                }
-              }</code></pre>
-          <p>Lisää tietoa media queryistä löytyy <a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">ominaisuuden virallisesta määrittelystä</a> tai <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries" target="_blank">Mozillan kehittäjäsivulta</a></p>
-          <div class="warning"><i>&#xF049;</i>Internet Explorer tukee media queryjä vasta versiosta 9 eteenpäin</div>
-        </div>
-      </section>
-      <section id="slide-practices">
-        <div class="wrap">
-          <h1>Hyväksi todettuna käytäntöjä</h1>
-          <div class="column">
-            <div class="screen">
-              <div class="screen-inner">
-                <div id="display">
-                  <div class="header">Hello</div>
-                  <div class="column"><img src="img/kissa.png" alt="">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                      Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.   
-                    </p>
-                  </div>
-                  <div class="column">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                      Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
-                      Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.                       
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                      Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo. 
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                      Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
-                      Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.                       
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                      Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.                       
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <ul>
-              <li> <i>&#xF0AD;</i>Sivun responsiivisuus kannattaa pitää alusta lähtien mielessä.</li>
-              <li> <i>&#xF0AD;</i>Elementtien koon määrittämiseen kannattaa usein käyttää prosentteja, 
-                mutta on hyvä pitää niitä ympäröivän elementin koko esimerkiksi pikseleillä määriteltynä.<br>Ympäröivää elementtiä voi siten myöhemmin hallita helposti esimerkiksi media queryillä.
-              </li>
-              <li><i>&#xF0AD;</i>Linkkien ja painikkeiden kannattaa olla varsinkin mobiili- ja tablettikoossa tarpeeksi
-                suuria jotta niihin osuu sormella.
-              </li>
-              <li>
-                <button class="btn">Näin isoja</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="wrap">
-          <h3>Yksinkertainen responsiivinen ulkoasu</h3>
-          <h4>HTML</h4>
-          <pre><code data-language="html">
-              <div class="header">
-                Hello
-              </div>
-              <div class="column">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </div>
-              <div class="column">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </div></code></pre>
-          <h4>CSS</h4>
-          <pre><code data-language="css">
-              .header {
-                height: 30px;
-                background: #ccc;
-                line-height: 30px;
-                padding: 0 10px;
-              }
-              .column {
-                width: 50%;
-                float: left;
-              }
-              @media all and (max-width: 640px) {
-                .column {
-                  width: 100%;
-                  float: none;
-                }
-              }</code></pre>
-        </div>
-      </section>
-    </div>
-    <script type="text/javascript">
-      require(['app'], function(app){ app.main() })
-      
-      
-    </script>
-  </body>
-</html>
+<!DOCTYPE html><html><head><link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps"><link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.9.2.custom.min.css"><link rel="stylesheet" type="text/css" href="css/styles.css"><link rel="stylesheet" type="text/css" href="css/rainbow.theme.css"><meta content="width=device-width, minimum-scale=0.5, maximum-scale=0.5" name="viewport"><script type="text/javascript" src="js/vendor/require.js" data-main="js/modules/app"></script><meta charset="utf-8"><title>HTML5 Template Project</title></head><body><div id="header"><a href="#slide-responsive"><i>&#xF12C; </i><span>Responsiivinen suunnittelu</span></a><a href="#slide-mediaquery"><i>&#xF062; </i><span>CSS Media query</span></a><a href="#slide-practices"><i>&#xF139; </i><span>Hyviä käytäntöjä</span></a></div><div id="main"><section id="slide-intro"><h1><img src="img/contract.png" alt="">Responsiivinen <span>suunnittelu</span></h1></section><section id="slide-responsive"><div class="wrap"><h1> <i>&#xF12C; </i>Mitä on responsiivinen suunnittelu?</h1><p class="description">Responsiivinen suunnittelu on suunnittelua, joka tavoite on mahdollistaa
+nettisivun tai applikaation käyttö niin kaikille laitteille kuin kaikille näyttökoille.  
+Vaikka pöytätietokoneiden ja kannettavien tietokoneiden näytön resoluutiot ovatkin kasvaneet
+huomattavasti, on samaan aikaan mobiililaitteiden käyttö internetin selaamiseen yleistynyt.</p><div class="column"><img src="img/mobile.png" alt=""></div><div class="column"><h3>Juuh elikkäs</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo. </p><p>Vestibulum ultricies sodales mauris, convallis interdum diam suscipit nec. Sed congue nunc a dolor tristique sed cursus mi tempor. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Nullam vel metus neque, eget congue ante. Nulla tortor mauris, auctor vitae consequat feugiat, euismod quis quam. 
+Suspendisse non lorem lorem. Duis non nisl quam, eget ultrices tortor. Donec sagittis ligula a risus mattis hendrerit. 
+Curabitur dolor dui, auctor sit amet volutpat eget, tempus vehicula lectus. </p></div></div></section><section id="slide-mediaquery"><div class="wrap"><h1> <i>&#xF062;</i> CSS Media query</h1><p class="description">CSS Media queryjen avulla voidaan asettaa ulkoasulle useita halkeamispisteitä ns. "breakpointteja", joihin
+voidaan asettaa määrityksiä tietynlaiselle näyttötyypille tai -koolle.<br>Breakpointit määritellään muiden tyylimääritysten sekaan hieman erikoisfonttien määrittelyä vastaavalla syntaksilla</p><pre><code data-language="css">@media all and (max-width: 960px) {
+  /* 
+    Määritetään .column - luokan omaavat elementit puoleen näytön koosta
+    kun näytön koko on maksimissaan 960 pikseliä leveä
+  */
+  .column {
+    width: 480px;
+  }
+} </code></pre><p>Queryjen määrittelyssä asetetaan ensin minkälaiselle laitteelle (medialle) asetus on tarkoitettu.
+Tässä tapauksessa määritys koskee kaikkia laitteita (all).
+Muita usein käytettyjä määrityksiä:</p><ul><li>handheld - Puhelimet, tabletit</li><li>screen - Pöytätietokoneet ja kannettavat tietokoneet</li><li>tv - Televisiot</li></ul><p>Kaikki määrityksen ehdot yhdistetään loogisilla operaattoreilla <strong>and</strong>,<strong> pilkku (, joka vastaa käytännössä OR operaattoria) </strong>,<strong> not</strong>,<strong> only</strong><br><br>Yleisimpiä näytön ominaisuuksien ehtoja:</p><ul><li>max-width - Ikkunan maksimileveys</li><li>max-height - Ikkunan maksimikorkeus</li><li>min-width - Ikkunan minimileveys</li><li>min-height - Ikkunan minimikorkeus</li><li>orientation - Laitteen orientaatio (landscape|portrait)</li><li>aspect-ratio - Ikkunan kuvasuhde</li></ul><pre><code data-language="css">@media screen and (max-width: 995px) , screen and (max-height: 700px) {
+  /* Esimerkki määrityksien ketjuttamisesta */
+  #cat {
+    display: none;
+  }
+}</code></pre><p>Lisää tietoa media queryistä löytyy <a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">ominaisuuden virallisesta määrittelystä</a> tai <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries" target="_blank">Mozillan kehittäjäsivulta</a></p><div class="warning"><i>&#xF049;</i>Internet Explorer tukee media queryjä vasta versiosta 9 eteenpäin</div></div></section><section id="slide-practices"><div class="wrap"><h1> <i>&#xF139; </i>Hyväksi todettuna käytäntöjä</h1><div class="column"><div class="screen"><div class="screen-inner"><div id="display"><div class="header">Hello</div><div class="column"><img src="img/kissa.png" alt=""><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.   </p></div><div class="column"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
+Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.                       
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
+Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.                       
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo.                       </p></div></div></div></div></div><div class="column"><ul><li> <i>&#xF0AD;</i>Sivun responsiivisuus kannattaa pitää alusta lähtien mielessä.</li><li><i>&#xF0AD;</i>Linkkien ja painikkeiden kannattaa olla varsinkin mobiili- ja tablettikoossa tarpeeksi
+suuria jotta niihin osuu sormella.</li><li><button class="btn">Näin isoja</button></li><li> <i>&#xF0AD;</i>Elementtien koon määrittämiseen kannattaa usein käyttää prosentteja, 
+mutta on hyvä pitää niitä ympäröivän elementin koko esimerkiksi pikseleillä määriteltynä.<br>Ympäröivää elementtiä voi siten myöhemmin hallita helposti esimerkiksi media queryillä.</li></ul></div></div><div class="wrap"><h3>Yksinkertainen responsiivinen ulkoasu</h3><h4>HTML</h4><pre><code data-language="html"><div class="header">
+  Hello
+</div>
+<div class="column">
+  <img src="img/kissa.png" alt="" />
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+<div class="column">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div></code></pre><h4>CSS</h4><pre><code data-language="css">.header {
+  height: 30px;
+  background: #ccc;
+  line-height: 30px;
+  padding: 0 10px;
+}
+.column {
+  width: 50%;
+  float: left;
+}
+.column img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+@media all and (max-width: 640px) {
+  .column {
+    width: 100%;
+    float: none;
+  }
+}</code></pre></div></section></div><script type="text/javascript">require(['app'], function(app){ app.main() })
+
+</script></body></html>

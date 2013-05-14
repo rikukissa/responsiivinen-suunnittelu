@@ -17,8 +17,9 @@ module.exports = (grunt) ->
       compile:
         files:
           "public/index.html": "src/jade/index.jade"
-      options:
-        pretty: true
+      #options:
+        #pretty: true
+
     stylus:
       compile:
         files:
