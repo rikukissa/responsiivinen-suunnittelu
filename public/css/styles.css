@@ -363,6 +363,65 @@ h4 {
 #slide-practices pre {
   margin-top: 0;
 }
+#slide-feedback {
+  -webkit-box-shadow: 0 -5px 5px rgba(0,0,0,0.075);
+  -moz-box-shadow: 0 -5px 5px rgba(0,0,0,0.075);
+  -ms-box-shadow: 0 -5px 5px rgba(0,0,0,0.075);
+  -o-box-shadow: 0 -5px 5px rgba(0,0,0,0.075);
+  box-shadow: 0 -5px 5px rgba(0,0,0,0.075);
+  background: url("../img/pw_maze_white.png");
+}
+#slide-feedback p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#slide-feedback h1 {
+  margin-bottom: 30px;
+}
+#slide-feedback hr {
+  margin-bottom: 20px;
+  border-top: 1px dashed #fff;
+  border-bottom: 1px dashed #ccc;
+}
+form .input-item {
+  overflow: hidden;
+  padding-left: 75px;
+  margin-bottom: 15px;
+  position: relative;
+}
+form .input-item input,
+form .input-item textarea {
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 400px;
+}
+form .input-item input {
+  height: 30px;
+}
+form .input-item textarea {
+  height: 200px;
+}
+form .input-item label {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+form .input-result .post-success {
+  color: #008000;
+}
+form .input-result .post-error {
+  color: #f00;
+}
+form .input-result .post-success,
+form .input-result .post-error {
+  display: none;
+}
+form.success .post-success {
+  display: inline-block;
+}
+form.error .post-error {
+  display: inline-block;
+}
 @media all and (max-width: 1040px) {
   #slide-intro h1 {
     font-size: 70px;

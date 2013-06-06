@@ -281,6 +281,50 @@ h4
       transform scale(0.8, 0.8)
   pre 
     margin-top 0
+
+#slide-feedback
+  box-shadow 0 -5px 5px rgba(0, 0, 0, 0.075)
+  background url(../img/pw_maze_white.png)
+  p 
+    margin-top 10px
+    margin-bottom 20px
+  h1
+    margin-bottom 30px
+  hr
+    margin-bottom 20px
+    border-top 1px dashed #FFF
+    border-bottom 1px dashed #CCC
+form
+  .input-item
+    overflow hidden
+    padding-left 75px
+    margin-bottom 15px
+    position relative
+    input,textarea 
+      border 1px solid #CCC
+      width 100%
+      max-width 400px
+    input
+      height 30px
+    textarea
+      height 200px
+    label
+      position absolute
+      left 0
+      top 0
+  .input-result
+    .post-success
+      color green
+    .post-error
+      color red 
+    .post-success, .post-error 
+      display none
+  &.success
+    .post-success 
+      display inline-block
+  &.error
+    .post-error
+      display inline-block
 @media all and (max-width: 1040px)
   #slide-intro
     h1

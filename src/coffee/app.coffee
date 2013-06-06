@@ -37,3 +37,15 @@ define (require) ->
       $(this).addClass 'screen-mobile' if $(this).width() < 120
     )
     screen.find('#display').on 'scroll', (e) -> e.stopPropagation()
+
+    $('.email').text '@'
+
+    $('#feedback').on 'submit', (e) ->
+      e.preventDefault()
+      $(this).removeClass 'success error'
+      $.ajax
+        type: 'POST'
+        data: $(this).serialize()
+        url: "feedback.php"
+        success: (data) => $(this).addClass 'success' 
+        error: () => $(this).addClass 'error' 

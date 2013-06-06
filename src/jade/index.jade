@@ -8,7 +8,7 @@ html
     meta(content='width=device-width, minimum-scale=0.5, maximum-scale=0.5', name='viewport')
     script(type='text/javascript', src='js/vendor/require.js', data-main='js/modules/app')
     meta(charset='utf-8')
-    title HTML5 Template Project
+    title Responsiivinen suunnittelu
   body
     #header
       a(href='#slide-responsive')
@@ -20,6 +20,9 @@ html
       a(href='#slide-practices')
         i &#xF139; 
         span Hyviä käytäntöjä
+      a(href='#slide-feedback')
+        i &#xF060; 
+        span Palaute
     #main
       section#slide-intro
         h1
@@ -39,18 +42,15 @@ html
           .column
             img(src='img/mobile.png', alt='')
           .column
-            h3 Juuh elikkäs
             p
-              |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna diam, feugiat ut tincidunt et, tempor vitae magna. 
-              |Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              |Aliquam erat volutpat. Duis neque neque, sodales id tincidunt quis, suscipit ac justo. 
-              
+              | Perinteisesti mobiililaitteille on luotu erillinen versio tai natiivisovellus palvelusta, mutta
+              | jatkuvasti kehittyvä web-teknologia on mahdollistanut yhden version tarjoamisen kaikille laitteille.
+              | Tämä nopeuttaa uusien palvelujen kehittämistä ja helpottaa myös käyttäjän elämää.
             p
-              |Vestibulum ultricies sodales mauris, convallis interdum diam suscipit nec. Sed congue nunc a dolor tristique sed cursus mi tempor. 
-              |Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              |Nullam vel metus neque, eget congue ante. Nulla tortor mauris, auctor vitae consequat feugiat, euismod quis quam. 
-              |Suspendisse non lorem lorem. Duis non nisl quam, eget ultrices tortor. Donec sagittis ligula a risus mattis hendrerit. 
-              |Curabitur dolor dui, auctor sit amet volutpat eget, tempus vehicula lectus. 
+              | Responsiivista suunnittelua voidaan toteuttaa muun muassa näytön kokoon mukautuvien elementtikehikoiden avulla, kuvilla
+              | joiden koko on relatiivisesti määritetty niitä ylempien elementin koon mukaan ja CSS media queryillä jotka mahdollistavat
+              | CSS - määritysten asettamisen näyttökoon mukaan.
+
       section#slide-mediaquery
         .wrap
           h1 
@@ -201,6 +201,36 @@ html
               |     float: none;
               |   }
               | }
+      section#slide-feedback
+        .wrap
+          h1 
+            i &#xF060;
+            |  Palaute
+
+          p 
+            |Tästä voit lähettää yleistä palautetta työstä tai kysymyksiä koskien responsiivista suunnittelua.
+            br
+            |Palaute ohjautuu suoraan osoitteeseen riku.rouvila
+            span.email
+            | gmail.com
+          hr
+          form#feedback(action='#', method='POST')
+            .input-item
+              label Nimi
+              input(type='text', name='name')
+            .input-item
+              label Email
+              input(type='text', name='email')
+            .input-item
+              label Viesti
+              textarea(name='message')
+            .input-item
+              input.btn(type='submit', value='Lähetä palaute')
+            .input-item.input-result
+              .post-success 
+                | Palaute lähetetty!
+              .post-error
+                | Palautteen lähettämisessä sattui virhe. Koita hetken päästä uudelleen
 
     script(type='text/javascript')
       require(['app'], function(app){ app.main() })
