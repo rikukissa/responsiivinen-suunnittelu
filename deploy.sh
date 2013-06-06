@@ -1,0 +1,1 @@
+rsync -avz public/ rr96412@kielo.uta.fi:~/public_html/JWT/HT/
